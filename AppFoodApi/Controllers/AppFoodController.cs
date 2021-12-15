@@ -22,10 +22,10 @@ namespace AppFoodApi.Controllers
             return Ok("chao mưng bạn");
         }
 
-        [Route("api/AppFoodController/GetAllSubject")]
+        [Route("api/AppFoodController/GetNhaHang")]
         [HttpGet]
 
-        public IHttpActionResult GetAllSubject()
+        public IHttpActionResult GetNhaHang()
         {
             try
             {
