@@ -18,7 +18,7 @@ namespace AppFoodApi.Database
                 DataTable resultTable = new DataTable();
 
                 //create connection
-                string SqlconnectionString = ConfigurationManager.ConnectionStrings["QLBS2"].ConnectionString;
+                string SqlconnectionString = ConfigurationManager.ConnectionStrings["AppFood"].ConnectionString;
                 SqlConnection connection = new SqlConnection(SqlconnectionString);
 
                 connection.Open();

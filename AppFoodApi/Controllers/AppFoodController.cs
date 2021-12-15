@@ -29,7 +29,7 @@ namespace AppFoodApi.Controllers
         {
             try
             {
-                DataTable result = Database.Database.ReadTable("Proc_GetAllSubject");
+                DataTable result = Database.Database.ReadTable("Get_Nhahang");
                 return Ok(result);
             }
             catch
