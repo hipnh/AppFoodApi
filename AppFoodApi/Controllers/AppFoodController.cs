@@ -143,6 +143,30 @@ namespace AppFoodApi.Controllers
 
             }
         }
+
+
+        [Route("api/AppFoodController/CreateUser")]
+        [HttpGet]
+
+        public IHttpActionResult CreateUser(string username, string pw,string name)
+        {
+            try
+            {
+                Dictionary<string, object> param = new Dictionary<string, object>();
+                param.Add("username", username);
+                param.Add("pw", pw);
+                param.Add("hoten", name);
+                //DataTable result = Database.Database.ReadTable("GetMonAnByNhaHang", param);
+                //DataTable result = 
+                DataTable result = Database.Database.ReadTable("CreateUser", param);
+                return Ok(result);
+            }
+            catch
+            {
+                return NotFound();
+
+            }
+        }
         // GET: AppFood
         //public ActionResult Index()
         //{
