@@ -134,8 +134,8 @@ namespace AppFoodApi.Controllers
                 param.Add("pw", pw);
                 //DataTable result = Database.Database.ReadTable("GetMonAnByNhaHang", param);
                 //DataTable result = 
-                Database.Database.ReadTable("CheckOneUser", param);
-                return Ok(1);
+                DataTable result = Database.Database.ReadTable("CheckOneUser", param);
+                return Ok(result);
             }
             catch
             {
