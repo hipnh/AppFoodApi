@@ -120,6 +120,29 @@ namespace AppFoodApi.Controllers
 
             }
         }
+
+
+        [Route("api/AppFoodController/CheckOneUser")]
+        [HttpGet]
+
+        public IHttpActionResult CheckOneUser(string username,string pw)
+        {
+            try
+            {
+                Dictionary<string, object> param = new Dictionary<string, object>();
+                param.Add("username", username);
+                param.Add("pw", pw);
+                //DataTable result = Database.Database.ReadTable("GetMonAnByNhaHang", param);
+                //DataTable result = 
+                Database.Database.ReadTable("CheckOneUser", param);
+                return Ok(1);
+            }
+            catch
+            {
+                return NotFound();
+
+            }
+        }
         // GET: AppFood
         //public ActionResult Index()
         //{
