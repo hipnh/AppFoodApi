@@ -167,6 +167,91 @@ namespace AppFoodApi.Controllers
 
             }
         }
+
+        [Route("api/AppFoodController/InsertHoaDon")]
+        [HttpGet]
+
+        public IHttpActionResult InsertHoaDon(int mand, float tongtien,DateTime tgdat,DateTime tggiao,float ship)
+        {
+            try
+            {
+                Dictionary<string, object> param = new Dictionary<string, object>();
+                param.Add("mand", mand);
+                param.Add("tongtien", tongtien);
+                param.Add("tgdat", tgdat);
+                param.Add("tggiao", tggiao);
+                param.Add("ship", ship);
+
+                DataTable result = Database.Database.ReadTable("InsertHoaDon", param);
+                return Ok(result);
+            }
+            catch
+            {
+                return NotFound();
+
+            }
+        }
+
+        [Route("api/AppFoodController/InsertCTHoaDon")]
+        [HttpGet]
+
+        public IHttpActionResult InsertCTHoaDon(int mahd,int mama,int soluong)
+        {
+            try
+            {
+                Dictionary<string, object> param = new Dictionary<string, object>();
+                param.Add("mahd", mahd);
+                param.Add("mama", mama);
+                param.Add("soluong", soluong);
+
+                DataTable result = Database.Database.ReadTable("InsertCTHoaDon", param);
+                return Ok(result);
+            }
+            catch
+            {
+                return NotFound();
+
+            }
+        }
+
+        [Route("api/AppFoodController/GetHoaDonByUser")]
+        [HttpGet]
+
+        public IHttpActionResult GetHoaDonByUser(int mand)
+        {
+            try
+            {
+                Dictionary<string, object> param = new Dictionary<string, object>();
+                param.Add("mand", mand);
+                DataTable result = Database.Database.ReadTable("GetHoaDonByUser", param);
+                return Ok(result);
+            }
+            catch
+            {
+                return NotFound();
+
+            }
+        }
+
+        [Route("api/AppFoodController/GetCTHoaDon")]
+        [HttpGet]
+
+        public IHttpActionResult GetCTHoaDon(int mahd)
+        {
+            try
+            {
+                Dictionary<string, object> param = new Dictionary<string, object>();
+                param.Add("mahd", mahd);
+                DataTable result = Database.Database.ReadTable("GetCTHoaDon", param);
+                return Ok(result);
+            }
+            catch
+            {
+                return NotFound();
+
+            }
+        }
+
         // GET: AppFood
         //public ActionResult Index()
         //{
