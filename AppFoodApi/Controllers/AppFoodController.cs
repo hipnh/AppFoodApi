@@ -148,14 +148,17 @@ namespace AppFoodApi.Controllers
         [Route("api/AppFoodController/CreateUser")]
         [HttpGet]
 
-        public IHttpActionResult CreateUser(string username, string pw,string name)
-        {
+        public IHttpActionResult CreateUser(string username, string pw,string name, string SDT =null ,string EMAIL=null , DateTime? NGAYSINH=null)
+        { 
             try
             {
                 Dictionary<string, object> param = new Dictionary<string, object>();
                 param.Add("username", username);
                 param.Add("pw", pw);
                 param.Add("hoten", name);
+                param.Add("SDT ", SDT);
+                param.Add("EMAIL", EMAIL);
+                param.Add("NGAYSINH", NGAYSINH);
                 //DataTable result = Database.Database.ReadTable("GetMonAnByNhaHang", param);
                 //DataTable result = 
                 DataTable result = Database.Database.ReadTable("CreateUser", param);
