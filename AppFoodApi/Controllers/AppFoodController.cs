@@ -255,6 +255,51 @@ namespace AppFoodApi.Controllers
             }
         }
 
+        [Route("api/AppFoodController/UpdateUser")]
+        [HttpGet]
+
+        public IHttpActionResult UpdateUser(int mand, string hoten, string SDT = null, string EMAIL = null, DateTime? NGAYSINH = null)
+        {
+            try
+            {
+                Dictionary<string, object> param = new Dictionary<string, object>();
+                param.Add("mand", mand);
+                param.Add("hoten", hoten);
+                param.Add("SDT", SDT);
+                param.Add("EMAIL", EMAIL);
+                param.Add("NGAYSINH", NGAYSINH);
+
+                DataTable result = Database.Database.ReadTable("UpdateUser", param);
+                return Ok(result);
+            }
+            catch
+            {
+                return NotFound();
+
+            }
+        }
+
+
+        [Route("api/AppFoodController/UpdatePassword")]
+        [HttpGet]
+
+        public IHttpActionResult UpdatePassword(int mand, string pw)
+        {
+            try
+            {
+                Dictionary<string, object> param = new Dictionary<string, object>();
+                param.Add("mand", mand);
+                param.Add("pw", pw);
+
+                DataTable result = Database.Database.ReadTable("UpdatePassword", param);
+                return Ok(result);
+            }
+            catch
+            {
+                return NotFound();
+
+            }
+        }
         // GET: AppFood
         //public ActionResult Index()
         //{

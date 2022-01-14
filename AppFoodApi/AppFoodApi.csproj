@@ -173,6 +173,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Image\Restaurant\nhahang1.jpg" />
+    <Content Include="Image\Restaurant\nhahang10.jpg" />
+    <Content Include="Image\Restaurant\nhahang2.jpg" />
+    <Content Include="Image\Restaurant\nhahang3.png" />
+    <Content Include="Image\Restaurant\nhahang4.jpg" />
+    <Content Include="Image\Restaurant\nhahang5.jpg" />
+    <Content Include="Image\Restaurant\nhahang6.jpg" />
+    <Content Include="Image\Restaurant\nhahang7.jpg" />
+    <Content Include="Image\Restaurant\nhahang8.jpg" />
+    <Content Include="Image\Restaurant\nhahang9.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -218,6 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\Food\" />
     <Folder Include="Models\" />
     <Folder Include="Views\AppFood\" />
   </ItemGroup>
